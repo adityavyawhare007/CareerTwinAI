@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Career Assessment | Career Twin AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/prediction.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <h1>
+
+            Career Twin AI
+
+            <span>
+
+                AI Career Assessment
+
+            </span>
+
+        </h1>
+
+        <p>
+
+            Our AI analyzes your academic performance,
+            technical skills, interests, communication,
+            and work preferences to recommend the
+            most suitable career path for your future.
+
+        </p>
+
+        <div class="feature-box">
+
+            <div class="feature">
+                🧠 Smart Analysis
+            </div>
+
+            <div class="feature">
+                ⚡ Fast Prediction
+            </div>
+
+            <div class="feature">
+                🎯 Personalized Result
+            </div>
+
+        </div>
+
+        <div class="robot-image">
+
+            <img
+                src="{{ url_for('static', filename='images/hero.png') }}"
+                alt="AI Robot">
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <h2>
+
+            AI Career Assessment
+
+        </h2>
+
+        <p>
+
+            Complete the assessment below
+            and let our AI recommend
+            the best career for you.
+
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>👤 Full Name</label>
+
+                    <input
+                        type="text"
+                        name="full_name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+                <div>
+
+                    <label>📊 Percentage</label>
+
+                    <input
+                        type="number"
+                        name="percentage"
+                        min="0"
+                        max="100"
+                        placeholder="Enter Percentage"
+                        required>
+
+                </div>
+
+                <div>
+
+                    <label>🎓 Education</label>
+
+                    <select name="education" required>
+
+                        <option>Diploma CSE</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>📚 Favorite Subject</label>
+
+                    <select name="favorite_subject" required>
+
+                        <option>Python</option>
+                        <option>Java</option>
+                        <option>HTML CSS JS</option>
+                        <option>SQL</option>
+                        <option>Cyber Security</option>
+                        <option>Networking</option>
+                        <option>Cloud Computing</option>
+                        <option>Testing</option>
+                        <option>UI UX</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>💻 Programming Skill</label>
+
+                    <select name="programming_skill" required>
+
+                        <option>Excellent</option>
+                        <option>Good</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>🗄 Database Knowledge</label>
+
+                    <select name="database_skill">
+
+                        <option>Advanced</option>
+                        <option>Intermediate</option>
+                        <option>Beginner</option>
+                        <option>None</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>🌐 Web Development</label>
+
+                    <select name="web_skill">
+
+                        <option>Advanced</option>
+                        <option>Intermediate</option>
+                        <option>Beginner</option>
+                        <option>None</option>
+
+                    </select>
+
+                </div>
+
+                                <div>
+
+                    <label>🗣 Communication</label>
+
+                    <select name="communication" required>
+
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>🧠 Problem Solving</label>
+
+                    <select name="problem_solving" required>
+
+                        <option>Excellent</option>
+                        <option>Good</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>🤝 Teamwork</label>
+
+                    <select name="teamwork">
+
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>👑 Leadership</label>
+
+                    <select name="leadership">
+
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>❤️ Interest</label>
+
+                    <select name="interest" required>
+
+                        <option>Artificial Intelligence</option>
+                        <option>Software Development</option>
+                        <option>Web Development</option>
+                        <option>Database</option>
+                        <option>Data Science</option>
+                        <option>Security</option>
+                        <option>Networking</option>
+                        <option>Cloud</option>
+                        <option>Software Testing</option>
+                        <option>Design</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>💼 Work Style</label>
+
+                    <select name="work_style" required>
+
+                        <option>Remote</option>
+                        <option>Office</option>
+                        <option>Hybrid</option>
+
+                    </select>
+
+                </div>
+
+                                <div>
+
+                    <label>🎯 Career Goal</label>
+
+                    <select name="career_goal">
+
+                        <option>AI Engineer</option>
+                        <option>Software Engineer</option>
+                        <option>Web Developer</option>
+                        <option>Data Analyst</option>
+                        <option>Cyber Security Analyst</option>
+                        <option>Cloud Engineer</option>
+                        <option>Network Engineer</option>
+                        <option>UI UX Designer</option>
+                        <option>QA Engineer</option>
+
+                    </select>
+
+                </div>
+
+                <div class="full-width">
+
+                    <label>⭐ Experience Level</label>
+
+                    <select name="experience">
+
+                        <option>Fresher</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+
+                🤖 Analyze My Career
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/prediction.js') }}"></script>
+
+</body>
+
+</html>

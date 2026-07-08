@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Prediction History | Career Twin AI</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/history.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>
+
+📜 Prediction History
+
+</h1>
+
+<p>
+
+Your Previous AI Career Predictions
+
+</p>
+
+{% if history %}
+
+{% for item in history %}
+
+<div class="history-card">
+
+<h2>
+
+🎯 {{ item[0] }}
+
+</h2>
+
+<p>
+
+Confidence :
+
+<b>{{ item[1] }}%</b>
+
+</p>
+
+<p>
+
+📅 {{ item[2] }}
+
+</p>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="history-card">
+
+<h2>
+
+No Prediction History Found
+
+</h2>
+
+</div>
+
+{% endif %}
+
+<div class="button-group">
+
+    <a href="/dashboard">
+
+        <button>
+
+            🏠 Back to Dashboard
+
+        </button>
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

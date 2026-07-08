@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Learning Roadmap</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/roadmap.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛣 {{ career }} Roadmap</h1>
+
+<div class="timeline">
+
+{% for step in roadmap %}
+
+<div class="item">
+
+<div class="number">
+
+{{ loop.index }}
+
+</div>
+
+<div class="content">
+
+{{ step }}
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<a href="/dashboard">
+
+<button>
+
+⬅ Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

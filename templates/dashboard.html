@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Career Twin AI</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+Career <span>Twin AI</span>
+
+</div>
+
+<nav>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/profile">Profile</a>
+
+<a href="/settings">Settings</a>
+
+<a href="/logout" class="logout-btn">
+
+Logout
+
+</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+Welcome Back, {{ user }} 👋
+
+</h1>
+
+<p>
+
+Your AI Career Assistant is ready to help you achieve your dream career.
+
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<img
+src="{{ url_for('static', filename='images/hero.png') }}"
+alt="Dashboard">
+
+</div>
+
+</section>
+
+<section class="cards">
+
+<a href="/prediction" class="card-link">
+
+<div class="card">
+
+🤖
+
+<h3>
+
+Career Prediction
+
+</h3>
+
+<p>
+
+Predict the best career using AI.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/history" class="card-link">
+
+<div class="card">
+
+📜
+
+<h3>
+
+Prediction History
+
+</h3>
+
+<p>
+
+View all your previous AI career predictions.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/skill-analysis" class="card-link">
+
+<div class="card">
+
+📊
+
+<h3>
+
+Skill Analysis
+
+</h3>
+
+<p>
+
+Analyze your strengths and weaknesses.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/roadmap" class="card-link">
+
+<div class="card">
+
+🛣
+
+<h3>
+
+Learning Roadmap
+
+</h3>
+
+<p>
+
+Get a personalized AI learning roadmap.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/courses" class="card-link">
+
+<div class="card">
+
+📚
+
+<h3>
+
+Courses
+
+</h3>
+
+<p>
+
+Recommended online courses.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/projects" class="card-link">
+
+<div class="card">
+
+💼
+
+<h3>
+
+Projects
+
+</h3>
+
+<p>
+
+Projects to improve your resume.
+
+</p>
+
+</div>
+
+</a>
+
+<a href="/prediction" class="card-link">
+
+<div class="card">
+
+📄
+
+<h3>
+
+Generate Report
+
+</h3>
+
+<p>
+
+Predict your career and download a professional PDF report.
+
+</p>
+
+</div>
+
+</a>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+
+</html>

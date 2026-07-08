@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+venv/
+.env
+
+CareerTwinAI_Report.pdf
+
+reports/
+
+*.db-journal
+
+.DS_Store
+Thumbs.db

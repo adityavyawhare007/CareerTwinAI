@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Career Result | Career Twin AI</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/result.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="header">
+
+<h1>🤖 Career Twin AI</h1>
+
+<p>AI Career Analysis Completed Successfully</p>
+
+</div>
+
+<div class="result-card">
+
+<h3>🎯 Recommended Career</h3>
+
+<h2>{{ career }}</h2>
+
+</div>
+
+<div class="result-card">
+
+<h3>🥇 Top 3 AI Recommendations</h3>
+
+<table class="career-table">
+
+<tr>
+
+<th>Rank</th>
+<th>Career</th>
+<th>Confidence</th>
+
+</tr>
+
+{% for item in top3 %}
+
+<tr>
+
+<td>
+
+{% if loop.index==1 %}
+🥇
+{% elif loop.index==2 %}
+🥈
+{% else %}
+🥉
+{% endif %}
+
+</td>
+
+<td>{{ item.career }}</td>
+
+<td>{{ item.score }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<div class="result-card">
+
+<h3>📈 Confidence Score</h3>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+style="width:{{ confidence }}%;">
+
+{{ confidence }}%
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================ -->
+
+<div class="skill-gap">
+
+<h2>
+
+🧠 AI Skill Gap Analysis
+
+</h2>
+
+<div class="gap-grid">
+
+<div class="gap-box strength">
+
+<h3>
+
+✅ Your Strengths
+
+</h3>
+
+<ul>
+
+{% for item in strengths %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="gap-box missing">
+
+<h3>
+
+❌ Missing Skills
+
+</h3>
+
+<ul>
+
+{% for item in missing %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="gap-box recommend">
+
+<h3>
+
+💡 AI Recommendation
+
+</h3>
+
+<p>
+
+{{ recommendation }}
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="result-card">
+
+<h3>📝 Career Description</h3>
+
+<p>{{ description }}</p>
+
+</div>
+
+<div class="bottom-grid">
+
+<div class="result-card">
+
+<h3>🛠 Required Skills</h3>
+
+<ul class="list">
+
+{% for skill in skills %}
+
+<li>✅ {{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="result-card">
+
+<h3>📚 Recommended Courses</h3>
+
+<ul class="list">
+
+{% for course in courses %}
+
+<li>📖 {{ course }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="result-card salary-card">
+
+<h3>💰 Average Salary</h3>
+
+<h2>{{ salary }}</h2>
+
+</div>
+
+<div class="roadmap-card">
+
+<h2>🛣 AI Career Roadmap</h2>
+
+<p class="roadmap-subtitle">
+
+Follow this learning path to become a successful
+<b>{{ career }}</b>.
+
+</p>
+
+<div class="timeline">
+
+{% for step in roadmap %}
+
+<div class="timeline-item">
+
+<div class="timeline-circle">
+
+{{ loop.index }}
+
+</div>
+
+<div class="timeline-content">
+
+{{ step }}
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<div class="button-group">
+
+<a href="/prediction">
+
+<button class="primary-btn">
+
+🔄 Analyze Again
+
+</button>
+
+</a>
+
+<a href="/download-report" class="secondary-btn">
+
+📄 Download Report
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

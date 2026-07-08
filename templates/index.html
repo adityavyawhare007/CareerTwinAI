@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Twin AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+
+        Career <span>Twin AI</span>
+
+    </div>
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#features">Features</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+<a href="/login" class="login-btn">
+        Login
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="tag">
+
+            🚀 AI Powered Career Guidance
+
+        </div>
+
+        <h1>
+
+            Find Your Dream Career
+
+            <span>with Artificial Intelligence</span>
+
+        </h1>
+
+        <p>
+
+            Career Twin AI helps students discover the
+            best career based on their interests,
+            education and skills using Artificial Intelligence.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn-primary">
+
+                Get Started
+
+            </a>
+
+            <a href="#features" class="btn-secondary">
+
+                Learn More
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-right">
+
+        <div class="hero-image">
+
+            <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Hero">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="features">
+
+    <h2>
+
+        Why Choose Career Twin AI?
+
+    </h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <h3>🧠 AI Prediction</h3>
+
+            <p>
+
+                Get personalized career recommendations.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <h3>📈 Skill Analysis</h3>
+
+            <p>
+
+                Analyze strengths and improve weak areas.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <h3>🗺 Learning Roadmap</h3>
+
+            <p>
+
+                Receive a complete roadmap for your future.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h2>10K+</h2>
+
+        <p>Students</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>500+</h2>
+
+        <p>Career Paths</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>98%</h2>
+
+        <p>Accuracy</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>24/7</h2>
+
+        <p>Support</p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <h2>
+
+        About Career Twin AI
+
+    </h2>
+
+    <p>
+
+        Career Twin AI is an AI-based career recommendation
+        system developed to help students identify the best
+        career opportunities through Machine Learning and
+        intelligent analysis.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <h3>
+
+        Career Twin AI
+
+    </h3>
+
+    <p>
+
+        AI Powered Career Guidance Platform
+
+    </p>
+
+    <p>
+
+        © 2026 Career Twin AI | All Rights Reserved
+
+    </p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

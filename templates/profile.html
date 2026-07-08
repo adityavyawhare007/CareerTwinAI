@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Profile</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/profile.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>👤 My Profile</h1>
+
+<div class="row">
+
+<b>Full Name</b>
+
+<span>{{ user[0] }}</span>
+
+</div>
+
+<div class="row">
+
+<b>Email</b>
+
+<span>{{ user[1] }}</span>
+
+</div>
+
+<div class="row">
+
+<b>Mobile</b>
+
+<span>{{ user[2] }}</span>
+
+</div>
+
+<div class="row">
+
+<b>Education</b>
+
+<span>{{ user[3] }}</span>
+
+</div>
+
+<a href="/dashboard">
+
+<button>
+
+⬅ Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

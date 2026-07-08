@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Career Twin AI</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/projects.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>💼 AI Recommended Projects</h1>
+
+<p>
+
+Build these projects to strengthen your resume.
+
+</p>
+
+</div>
+
+<div class="project-grid">
+
+{% for project in projects %}
+
+<div class="project-card">
+
+<h2>{{ project.title }}</h2>
+
+<p><b>Difficulty:</b> {{ project.difficulty }}</p>
+
+<p><b>Duration:</b> {{ project.duration }}</p>
+
+<p>{{ project.description }}</p>
+
+<a href="{{ project.link }}" target="_blank">
+
+<button>
+
+🚀 View Project
+
+</button>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="back">
+
+<a href="/dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

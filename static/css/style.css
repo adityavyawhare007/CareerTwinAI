@@ -1,0 +1,741 @@
+/* ==========================================
+   Career Twin AI
+   Part 1 : Reset + Header + Hero
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(37,99,235,.12),
+    transparent 30%),
+
+    radial-gradient(circle at bottom left,
+    rgba(59,130,246,.10),
+    transparent 35%),
+
+    linear-gradient(
+    135deg,
+    #0b1120,
+    #111827,
+    #1f2937);
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    width:92%;
+
+    height:100px;
+
+    margin:25px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    background:rgba(17,24,39,.72);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+    position:sticky;
+
+    top:20px;
+
+    z-index:999;
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:white;
+
+    white-space:nowrap;
+
+}
+
+.logo span{
+
+    color:#38bdf8;
+
+}
+
+/* Navigation */
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#d1d5db;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a:hover{
+
+    color:#38bdf8;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#38bdf8;
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* Login Button */
+
+.login-btn{
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white !important;
+
+    padding:18px 38px;
+
+    border-radius:14px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.login-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    width:92%;
+
+    min-height:90vh;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.tag{
+
+    display:inline-block;
+
+    background:rgba(56,189,248,.15);
+
+    color:#7dd3fc;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(56,189,248,.20);
+
+    margin-bottom:30px;
+
+    font-weight:600;
+
+}
+
+.hero-left h1{
+
+    font-size:72px;
+
+    line-height:82px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-left h1 span{
+
+    color:#38bdf8;
+
+}
+
+.hero-left p{
+
+    font-size:21px;
+
+    line-height:36px;
+
+    color:#cbd5e1;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.hero-buttons a{
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    text-align:center;
+
+}
+
+.btn-primary{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:18px 38px;
+
+    border-radius:14px;
+
+    font-size:19px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+}
+
+.btn-secondary{
+
+    color:white;
+
+    border:2px solid rgba(255,255,255,.18);
+
+    padding:18px 38px;
+
+    border-radius:14px;
+
+    font-size:19px;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image{
+
+    width:500px;
+
+    height:500px;
+
+    background:rgba(30,41,59,.75);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.hero-image img{
+
+    width:85%;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+
+}
+
+/* ==========================================
+   Career Twin AI
+   Part 2 : Features + Stats + About + Footer
+========================================== */
+
+/* ================= FEATURES ================= */
+
+.features{
+
+    width:92%;
+    margin:100px auto;
+
+}
+
+.features h2{
+
+    text-align:center;
+    font-size:46px;
+    margin-bottom:60px;
+
+}
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+
+}
+
+.feature-card{
+
+    background:rgba(30,41,59,.70);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:40px 30px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 20px 45px rgba(37,99,235,.20);
+
+}
+
+.feature-card h3{
+
+    font-size:26px;
+
+    color:#38bdf8;
+
+    margin-bottom:18px;
+
+}
+
+.feature-card p{
+
+    color:#cbd5e1;
+
+    line-height:30px;
+
+    font-size:17px;
+
+}
+
+/* ================= STATISTICS ================= */
+
+.stats{
+
+    width:92%;
+
+    margin:90px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat{
+
+    background:rgba(30,41,59,.70);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:35px;
+
+    transition:.35s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+
+.stat h2{
+
+    font-size:46px;
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+}
+
+.stat p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+
+    width:92%;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.about h2{
+
+    font-size:46px;
+
+    margin-bottom:25px;
+
+}
+
+.about p{
+
+    width:75%;
+
+    margin:auto;
+
+    color:#cbd5e1;
+
+    font-size:19px;
+
+    line-height:35px;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:100px;
+
+    background:#08101d;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer h3{
+
+    color:#38bdf8;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    color:#94a3b8;
+
+    font-size:17px;
+
+    margin:10px 0;
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b1120;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-left,
+.hero-right{
+
+    width:100%;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.about p{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:25px;
+
+    gap:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.logo{
+
+    font-size:34px;
+
+}
+
+nav a{
+
+    font-size:18px;
+
+}
+
+.login-btn{
+
+    font-size:18px;
+
+}
+
+.hero{
+
+    padding-top:40px;
+
+}
+
+.hero-left h1{
+
+    font-size:48px;
+
+    line-height:60px;
+
+}
+
+.hero-left p{
+
+    font-size:18px;
+
+}
+
+.hero-image{
+
+    width:320px;
+
+    height:320px;
+
+}
+
+.hero-image img{
+
+    width:80%;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+}
