@@ -2,6 +2,7 @@ import pandas as pd
 import joblib
 import sqlite3
 import os
+import re
 
 from flask import (
     Flask,
@@ -320,36 +321,76 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/register",methods=["GET","POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
 
-    if request.method=="POST":
+    if request.method == "POST":
 
-        full_name=request.form["full_name"]
-        email=request.form["email"]
-        mobile=request.form["mobile"]
-        education=request.form["education"]
-        password=request.form["password"]
-        confirm_password=request.form["confirm_password"]
+        full_name = request.form["full_name"]
+        email = request.form["email"]
+        mobile = request.form["mobile"]
+        education = request.form["education"]
+        password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
 
-        if password!=confirm_password:
+        # ==========================
+        # Full Name Validation
+        # ==========================
+
+        if not re.fullmatch(r"[A-Za-z ]{3,50}", full_name):
+
+            return render_template(
+                "register.html",
+                error="Full Name should contain only letters and spaces."
+            )
+
+        # ==========================
+        # Mobile Validation
+        # ==========================
+
+        if not re.fullmatch(r"\d{10}", mobile):
+
+            return render_template(
+                "register.html",
+                error="Mobile Number must contain exactly 10 digits."
+            )
+
+        # ==========================
+        # Password Strength Validation
+        # ==========================
+
+        if not re.fullmatch(
+            r"^(?=.*[A-Z])(?=.*\d).{8,}$",
+            password
+        ):
+
+            return render_template(
+    "register.html",
+error="Weak password! Use 8+ characters, 1 uppercase letter & 1 number."
+)
+
+        # ==========================
+        # Confirm Password Validation
+        # ==========================
+
+        if password != confirm_password:
 
             return render_template(
                 "register.html",
                 error="Passwords do not match!"
             )
 
-        connection=sqlite3.connect(DATABASE)
-        cursor=connection.cursor()
+        connection = sqlite3.connect(DATABASE)
+        cursor = connection.cursor()
 
         try:
 
             cursor.execute("""
-            INSERT INTO users
-            (full_name,email,mobile,education,password)
-            VALUES(?,?,?,?,?)
+                INSERT INTO users
+                (full_name, email, mobile, education, password)
+                VALUES (?, ?, ?, ?, ?)
             """,
-            (full_name,email,mobile,education,password))
+            (full_name, email, mobile, education, password))
 
             connection.commit()
 

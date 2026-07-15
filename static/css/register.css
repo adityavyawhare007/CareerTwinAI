@@ -379,3 +379,22 @@ button{
     transform:none;
 
 }
+
+.input-box select{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+    cursor:pointer;
+
+}
+
+.input-box select option{
+
+    color:black;
+
+}

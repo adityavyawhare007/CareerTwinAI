@@ -50,119 +50,133 @@
 
 <form action="/register" method="POST">
 
-            <label>Full Name</label>
+    <label>Full Name</label>
 
-            <div class="input-box">
+    <div class="input-box">
+        <span>👤</span>
 
-                <span>👤</span>
+        <input
+        type="text"
+        name="full_name"
+        placeholder="Enter your full name"
+        required
+        pattern="[A-Za-z ]{3,50}"
+        title="Name should contain only letters and spaces.">
+    </div>
 
-                <input
-type="text"
-name="full_name"
-placeholder="Enter your full name"
-required>
+    <label>Email</label>
 
-            </div>
+    <div class="input-box">
+        <span>📧</span>
 
-            <label>Email</label>
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required>
+    </div>
 
-            <div class="input-box">
+    <label>Mobile Number</label>
 
-                <span>📧</span>
+    <div class="input-box">
+        <span>📱</span>
 
-                <input
-type="email"
-name="email"
-placeholder="Enter your email"
-required>
+        <input
+        type="tel"
+        name="mobile"
+        placeholder="Enter your mobile number"
+        required
+        pattern="[0-9]{10}"
+        maxlength="10"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+        title="Enter exactly 10 digits.">
+    </div>
 
-            </div>
+    <label>Education</label>
 
-            <label>Mobile Number</label>
+<div class="input-box">
 
-            <div class="input-box">
+    <span></span>
 
-                <span>📱</span>
+    <select name="education" required>
 
-                <input
-type="tel"
-name="mobile"
-placeholder="Enter your mobile number"
-required>
+        <option value="" selected disabled>🎓 Select Branch</option>
 
-            </div>
+        <option value="Computer Engineering">Computer Engineering</option>
 
-            <label>Education</label>
+        <option value="Information Technology">Information Technology</option>
 
-            <div class="input-box">
+        <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
 
-                <span>🎓</span>
+        <option value="Artificial Intelligence & Data Science">Artificial Intelligence & Data Science</option>
 
-                <input
-type="text"
-name="education"
-placeholder="Enter your education"
-required>
+        <option value="Computer Science">Computer Science</option>
 
-            </div>
+        <option value="Software Engineering">Software Engineering</option>
 
-            <label>Password</label>
+        <option value="Cyber Security">Cyber Security</option>
 
-            <div class="input-box">
+        <option value="Data Science">Data Science</option>
 
-                <span>🔒</span>
+        <option value="Other">Other</option>
 
-                <input
-type="password"
-id="password"
-name="password"
-placeholder="Create password"
-required>
+    </select>
 
-                <button
-                    type="button"
-                    class="show-password"
-                    onclick="togglePassword('password', this)">
+</div>
 
-                    👁
+                <label>Password</label>
 
-                </button>
+    <div class="input-box">
 
-            </div>
+        <span>🔒</span>
 
-            <label>Confirm Password</label>
+        <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create password"
+        required
+        pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
+        title="Password must have at least 8 characters, 1 uppercase letter and 1 number.">
 
-            <div class="input-box">
+        <button
+            type="button"
+            class="show-password"
+            onclick="togglePassword('password', this)">
+            👁
+        </button>
 
-                <span>🔒</span>
+    </div>
 
-                <input
-type="password"
-id="confirmPassword"
-name="confirm_password"
-placeholder="Confirm password"
-required>
+    <label>Confirm Password</label>
 
-                <button
-                    type="button"
-                    class="show-password"
-                    onclick="togglePassword('confirmPassword', this)">
+    <div class="input-box">
 
-                    👁
+        <span>🔒</span>
 
-                </button>
+        <input
+        type="password"
+        id="confirmPassword"
+        name="confirm_password"
+        placeholder="Confirm password"
+        required>
 
-            </div>
+        <button
+            type="button"
+            class="show-password"
+            onclick="togglePassword('confirmPassword', this)">
+            👁
+        </button>
 
-            <button
-                type="submit">
+    </div>
 
-                Create Account
+    <button type="submit">
 
-            </button>
+        Create Account
 
-        </form>
+    </button>
 
+</form>
         <div class="login-link">
 
             Already have an account?
